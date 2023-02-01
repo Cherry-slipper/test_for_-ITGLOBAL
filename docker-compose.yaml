@@ -7,12 +7,12 @@ services:
     ports:
       - 6379:6379
   node-exporter:
-    image: node-exporter
+    image: prom/node-exporter
   redis-exporter:
     image: oliver006/redis_exporter
     command: ["--redis.addr=redis:6379"]
   prometheus:
-    image: prometheus
+    image: prom/prometheus
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus-data:/data
