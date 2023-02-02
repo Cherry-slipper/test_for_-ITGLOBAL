@@ -4,7 +4,7 @@ services:
       image: redis
       command: redis-server --databases 8
       volumes:
-         - /redis-data:/var/lib/redis/data
+         - redis-data:/var/lib/redis/data
       ports:
          - 6379:6379
    node-exporter:
@@ -15,14 +15,15 @@ services:
    prometheus:
       image: prom/prometheus
       volumes:
-         - ./prometheus.yml:/etc/prometheus/prometheus.yml
-         - /prometheus-data:/var/lib/prometheus/data
-      command: config.file=/etc/prometheus/prometheus.yml,
-         storage.tsdb.path=/var/lib/prometheus/data
+         - .prometheus.yml:/home/prometheus/prometheus.yml
+         - prometheus-data:/var/lib/prometheus/data
+      command: 
+         config.file=/home/prometheus/prometheus.yml
+         storage.tsdb.path=/data
    grafana:
       image: grafana/grafana
       volumes:
-         - /grafana-data:/var/lib/grafana/data
+         - grafana-data:/var/lib/grafana/data
       ports:
          - 3000:3000
 volumes:
