@@ -13,6 +13,11 @@ services:
       image: oliver006/redis_exporter
       command: redis.addr=redis:6379
    prometheus:
+      spec:
+         securityContext:
+            fsGroup: 2000
+            runAsNonRoot: true
+            runAsUser: 1000
       image: prom/prometheus:v2.19.3
       volumes:
          - ./prometheus.yml:/opt/devopsina/prometheus.yml
@@ -20,10 +25,6 @@ services:
       command: 
          - '--config.file=/opt/devopsina/prometheus.yml'
          - '--storage.tsdb.path=/var/lib/prometheus/data'
-      securityContext:
-         fsGroup: 2000
-         runAsNonRoot: true
-         runAsUser: 1000
    grafana:
       image: grafana/grafana
       volumes:
