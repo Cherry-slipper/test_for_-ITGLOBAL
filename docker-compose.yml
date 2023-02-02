@@ -15,11 +15,11 @@ services:
    prometheus:
       image: prom/prometheus
       volumes:
-         - ./prometheus.yml:/home/prometheus/prometheus.yml
+         - ./prometheus.yml:/opt/devopsina/prometheus.yml
          - prometheus-data:/var/lib/prometheus/data
       command: 
-         - --config.file=/home/prometheus/prometheus.yml
-         - --storage.tsdb.path=/data
+         - --config.file=/opt/devopsina/prometheus.yml
+         - --storage.tsdb.path=/var/lib/prometheus/data
    grafana:
       image: grafana/grafana
       volumes:
