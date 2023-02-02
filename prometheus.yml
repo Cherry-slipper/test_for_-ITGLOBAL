@@ -6,7 +6,7 @@ global:
       instance_name: $(hostname)
 scrape_configs:
    job_name: node-exporter
-      tatic_configs:
+      static_configs:
          targets:
             node-exporter:9100
    job_name: redis-exporter
