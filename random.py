@@ -1,14 +1,14 @@
 import redis
 import random
 
-redis1 = redis.Redis(host='redis-1', port=6379, db=0)
-redis2 = redis.Redis(host='redis-2', port=6379, db=0)
-redis3 = redis.Redis(host='redis-3', port=6379, db=0)
-redis4 = redis.Redis(host='redis-4', port=6379, db=0)
-redis5 = redis.Redis(host='redis-5', port=6379, db=0)
-redis6 = redis.Redis(host='redis-6', port=6379, db=0)
-redis7 = redis.Redis(host='redis-7', port=6379, db=0)
-redis8 = redis.Redis(host='redis-8', port=6379, db=0)
+redis1 = redis.Redis(host='redis_.1_id', port=6379, db=0)
+redis2 = redis.Redis(host='redis_.2_id', port=6379, db=0)
+redis3 = redis.Redis(host='redis_.3_id', port=6379, db=0)
+redis4 = redis.Redis(host='redis_.4_id', port=6379, db=0)
+redis5 = redis.Redis(host='redis_.5_id', port=6379, db=0)
+redis6 = redis.Redis(host='redis_.6_id', port=6379, db=0)
+redis7 = redis.Redis(host='redis_.7_id', port=6379, db=0)
+redis8 = redis.Redis(host='redis_.8_id', port=6379, db=0)
 
 A = 66666
 
