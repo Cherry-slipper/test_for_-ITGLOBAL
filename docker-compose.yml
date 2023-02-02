@@ -18,8 +18,8 @@ services:
          - ./prometheus.yml:/opt/devopsina/prometheus.yml
          - prometheus-data:/var/lib/prometheus/data
       command: 
-         - --config.file=/opt/devopsina/prometheus.yml
-         - --storage.tsdb.path=/var/lib/prometheus/data
+         - '--config.file=/opt/devopsina/prometheus.yml'
+         - '--storage.tsdb.path=/var/lib/prometheus/data'
    grafana:
       image: grafana/grafana
       volumes:
