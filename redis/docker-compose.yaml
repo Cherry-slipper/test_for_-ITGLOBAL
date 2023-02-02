@@ -1,0 +1,17 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    command: redis-server --databases 8
+    volumes:
+      - redis-data:/var/lib/redis/data
+    ports:
+      - "6379:6379"
+  node-exporter:
+    image: prom/node-exporter
+  redis-exporter:
+    image: oliver006/redis_exporter
+    command:
+      - "-redis.addr=redis:6379"
+volumes:
+  redis-data:
